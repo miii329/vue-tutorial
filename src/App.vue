@@ -2,12 +2,9 @@
 import { ref } from 'vue'
 import ChildComp from './components/ChildComp.vue'
 
-const childMsg = ref('No child msg yet')
-// 発行されるイベントを宣言します
-const emit = defineEmits(['response'])
+const msg = ref('from parent')
 </script>
 
 <template>
-  <ChildComp @response="(msg) => (childMsg = msg)" />
-  <p>{{ childMsg }}</p>
+  <ChildComp>Message: {{ msg }}</ChildComp>
 </template>
